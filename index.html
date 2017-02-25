@@ -12,8 +12,8 @@
 
   </head>
   <body>
-    <div class="overlay hidden">
-      &nbsp;
+    <div class="overlay text-center hidden">
+      <span class="center-helper"></span><img src="img/loading.gif" class="center-vertically">
     </div>
     <div class="container">
       <div class="col-md-8">
@@ -22,41 +22,50 @@
       <div class="col-md-4">
         <h1 id="price">400 Kč</h1>
       </div>
+      <div class="col-md-3">
+        <h4>Způsob zasílání výpočtu</h4>
+        <select class="form-control" id="request-type">
+          <option value="async">asynchronní</option>
+          <option value="sync">synchronní</option>
+        </select>
+        <h4>Délka nahrávání</h4>
+        <select class="form-control" id="request-duration">
+          <option value="500">0,50 s</option>
+          <option value="750">0,75 s</option>
+          <option value="1000">1,00 s</option>
+          <option value="1500">1,50 s</option>
+          <option value="2000">2,00 s</option>
+        </select>
+      </div>
       <div class="col-md-12">
+        <h3>Přidat ridery do košíku</h3>
         <div class="checkbox">
           <label>
-            <input type="checkbox" id="checkbox1"> Rider 1 (0,50 s)
+            <input type="checkbox"> Rider A
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Rider B
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Rider C
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Rider D
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Rider E
           </label>
         </div>
       </div>
-      <div class="col-md-12">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" id="checkbox2"> Rider 1 (0,75 s)
-          </label>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" id="checkbox3"> Rider 1 (1,00 s)
-          </label>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" id="checkbox4"> Rider 1 (1,50 s)
-          </label>
-        </div>
-      </div>
-      <div class="col-md-12">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" id="checkbox5"> Rider 1 (2,00 s)
-          </label>
-        </div>
-      </div>
+
 
     </div>
 

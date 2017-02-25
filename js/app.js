@@ -1,33 +1,28 @@
 (function () {
 
   $(document).ready(function(){
-    $('#checkbox1').change(function() {
-          updateFields(500);
+
+    var promisesCounter = 0;
+
+    $(':checkbox').change(function() {
+          updateFields($('#request-duration').val());
       });
-
-    $('#checkbox2').change(function() {
-          updateFields(750);
-      });
-
-      $('#checkbox3').change(function() {
-            updateFields(1000);
-        });
-
-        $('#checkbox4').change(function() {
-              updateFields(1500);
-          });
-
-          $('#checkbox5').change(function() {
-                updateFields(2000);
-            });
 
 
     function updateFields(timeoutperiod) {
+      promisesCounter++;
       $('#price').html('<img src="img/loading.gif" style="width:100px">');
-      // $('.overlay').toggleClass('hidden');
+      if ($('#request-type').val()=="sync") {
+        $('.overlay').toggleClass('hidden');
+      }
       window.setTimeout(function () {
-        $('#price').html(400+$(":checked").length*150+' Kč');
-        // $('.overlay').toggleClass('hidden');
+        promisesCounter--;
+        if (promisesCounter == 0) {
+          $('#price').html(400+$(":checked").length*150+' Kč');
+          if ($('#request-type').val()=="sync") {
+            $('.overlay').toggleClass('hidden');
+          }
+        }
       }, timeoutperiod);
 
     };
