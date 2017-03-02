@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Demo timeoutů</title>
+    <title>Prototyp uživatelského rozhraní</title>
     <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/app.css">
@@ -16,27 +16,231 @@
     <div class="overlay text-center hidden">
       <span class="center-helper"></span><img src="img/loading.gif" class="center-vertically">
     </div>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="col-md-8">
+          <h1>Prototyp uživatelského rozhraní</h1>
+        </div>
+        <div class="col-md-4">
+          <h1 id="price">400 Kč</h1>
+        </div>
+      </div>
+    </nav>
     <div class="container">
-      <div class="col-md-8">
-        <h1>Test délky nahrávání ceny</h1>
+      <div class="col-md-12" id="zakladni-informace">
+        <h2>Základní informace o smlouvě</h2>
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="">Název výpočtu</label>
+            <input type="text" class="form-control" id="" placeholder="Kalkulace pro Jarku Novotnou 20.3.2017">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <label for="">Který produkt chcete sjednat?</label>
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="img/zivot.png" alt="" class="full-width-image">
+        </div>
+        <div class="col-md-3 text-center">
+          <img src="img/smart.png" alt="" class="full-width-image">
+        </div>
+        <div class="col-md-12">
+          <div class="form-group has-success">
+            <label class="control-label" for="">Plánované datum podpisu</label>
+            <input type="text" class="form-control" id="" placeholder="předvyplněno na dnes">
+          </div>
+          <div class="form-group has-success">
+            <label class="control-label" for="">Datum počátku pojištění</label>
+            <input type="text" class="form-control" id="" placeholder="předvyplněno na zítra">
+          </div>
+          <div class="form-group has-success">
+            <label class="control-label" for="">Pojistit do věku</label>
+            <input type="text" class="form-control" id="" placeholder="předvyplněno na 75">
+          </div>
+          <a href="#prvni-pojisteny" type="button" class="btn btn-primary btn-lg pull-right huge-margin-bottom">Další krok</a>
+        </div>
       </div>
-      <div class="col-md-4">
-        <h1 id="price">400 Kč</h1>
+      <div class="col-md-12" id="">
+        <a class="anchor" id="prvni-pojisteny"></a>
+        <h2>První pojištěný</h2>
+        <div class="form-group">
+          <label class="control-label" for="">Datum narození</label>
+          <input type="date" class="form-control" id="" placeholder="">
+        </div>
+        <label for="">Povolání</label>
+        <select class="form-control" id="">
+          <option value="500">bez rizika</option>
+          <option value="750">...</option>
+        </select>
+        <label for="">Pracovní poměr</label>
+        <select class="form-control" id="">
+          <option value="500">Zaměstnanec</option>
+          <option value="750">OSVČ</option>
+          <option value="750">Nezaměstnaný</option>
+        </select>
+        <div class="form-group">
+          <label class="control-label" for="">Sport (nepovinný)</label>
+          <input type="text" class="form-control" id="" placeholder="např. závody koloběžek">
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="">Hrubý měsíční příjem (nepovinný)</label>
+          <input type="text" class="form-control" id="" placeholder="25 000 Kč">
+        </div>
+        <a href="#prvni-pojisteny-smrt" type="button" class="btn btn-primary btn-lg pull-right huge-margin-bottom">Další krok</a>
+        <a href="#prvni-pojisteny-smrt" type="button" class="btn btn-primary btn-lg pull-right huge-margin-bottom">Navrhnout pojistné částky podle příjmu a přejít na další krok</a>
+
       </div>
-      <div class="col-md-3">
-        <h4>Způsob zasílání výpočtu</h4>
-        <select class="form-control" id="request-type">
-          <option value="async">asynchronní</option>
-          <option value="sync">synchronní</option>
-        </select>
-        <h4>Délka nahrávání</h4>
-        <select class="form-control" id="request-duration">
-          <option value="500">0,50 s</option>
-          <option value="750">0,75 s</option>
-          <option value="1000">1,00 s</option>
-          <option value="1500">1,50 s</option>
-          <option value="2000">2,00 s</option>
-        </select>
+      <div class="col-md-12">
+        <a class="anchor" id="prvni-pojisteny-smrt"></a>
+        <h2>První pojištěný - smrt</h2>
+        <a href="#prvni-pojisteny" type="button" class="btn btn-primary btn-lg pull-right huge-margin-bottom">Další krok</a>
+      </div>
+      <div class="col-md-12">
+        <h2>První pojištěný - dlouhodobé výpadky příjmu</h2>
+        <a href="#prvni-pojisteny" type="button" class="btn btn-primary btn-lg pull-right huge-margin-bottom">Další krok</a>
+      </div>
+      <div class="col-md-12">
+        <h2>První pojištěný - krátkodobé výpadky příjmu</h2>
+        <a href="#prvni-pojisteny" type="button" class="btn btn-primary btn-lg pull-right huge-margin-bottom">Další krok</a>
+        <a href="#prvni-pojisteny" type="button" class="btn btn-primary btn-lg pull-right huge-margin-bottom">Přidat 2. pojištěnou osobu</a>
+        <a href="#prvni-pojisteny" type="button" class="btn btn-primary btn-lg pull-right huge-margin-bottom">Přidat dítě</a>
+      </div>
+      <div class="col-md-12">
+        <h2>Nákupní košík</h2>
+        <table class="table table-hover table-condensed">
+          <tr>
+            <td colspan="6">
+              <h3>První pojištěný celkem: 503 Kč <button type="button" class="btn">Přejít k prvnímu pojištěnému</button></h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              (CZO3) Úmrtí následkem úrazu (i)
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="300 000 Kč">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="do 75 let">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="110 %">
+              </div>
+            </td>
+            <td>
+              <p>203 Kč</p>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger">Odstranit z košíku</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              (CZ124) Invalidita následkem úrazu
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="750 000 Kč">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="do 75 let">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="110 %">
+              </div>
+            </td>
+            <td>
+              <p>203 Kč</p>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger">Odstranit z košíku</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="6">
+              <h5>další řádky</h5>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="6">
+              <h3>Druhý pojištěný celkem: 201 Kč</h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              (CZO3) Úmrtí následkem úrazu
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="300 000 Kč">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="do 75 let">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="110 %">
+              </div>
+            </td>
+            <td>
+              <p>203 Kč</p>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger">Odstranit z košíku</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              (CZ124) Invalidita následkem úrazu
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="750 000 Kč">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="do 75 let">
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <input type="text" class="form-control" id="" placeholder="110 %">
+              </div>
+            </td>
+            <td>
+              <p>203 Kč</p>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger">Odstranit z košíku</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="6">
+              <h5>další řádky</h5>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="6">
+              <h3>Děti celkem: 54 Kč</h3>
+            </td>
+          </tr>
+        </table>
+        <a href="#prvni-pojisteny" type="button" class="btn btn-primary btn-lg pull-right huge-margin-bottom">Další krok</a>
       </div>
       <div class="col-md-12">
         <h3>Přidat ridery do košíku</h3>
@@ -66,7 +270,21 @@
           </label>
         </div>
       </div>
-
+      <div class="col-md-12">
+        <h4>Způsob zasílání výpočtu</h4>
+        <select class="form-control" id="request-type">
+          <option value="async">asynchronní</option>
+          <option value="sync">synchronní</option>
+        </select>
+        <h4>Délka nahrávání</h4>
+        <select class="form-control" id="request-duration">
+          <option value="500">0,50 s</option>
+          <option value="750">0,75 s</option>
+          <option value="1000">1,00 s</option>
+          <option value="1500">1,50 s</option>
+          <option value="2000">2,00 s</option>
+        </select>
+      </div>
 
     </div>
 
